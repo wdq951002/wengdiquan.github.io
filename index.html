@@ -300,30 +300,16 @@
       
         
           
-            <h1 id="版本更新记录"><a href="#版本更新记录" class="headerlink" title="版本更新记录"></a>版本更新记录</h1><hr>
-<h2 id="翁迪全：-2018-08-31-r1-0-0-7"><a href="#翁迪全：-2018-08-31-r1-0-0-7" class="headerlink" title="翁迪全： 2018/08/31:r1.0.0.7"></a>翁迪全： 2018/08/31:r1.0.0.7</h2><h3 id="更新功能说明"><a href="#更新功能说明" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><p>1.[update] 对接车流、人流;<br>2.[update] 阈值设置设备编号可以设置多个（以逗号分割）<br>3.[update] 去除了生成预警的demo页面;<br>4.[fix] 物资统计接口更换;<br>5.[fix] 解决第二次登录无法展示登录人信息的bug;<br>6.[update] scooper-report去除scooper-data的依赖（不再需要部署scooper-data）</p>
-<h3 id="数据库变更：-1-r1-0-0-7-sql-2-DB-SC-ACCESS由C那边提供"><a href="#数据库变更：-1-r1-0-0-7-sql-2-DB-SC-ACCESS由C那边提供" class="headerlink" title="数据库变更： 1. r1.0.0.7.sql 2.DB_SC_ACCESS由C那边提供;"></a>数据库变更： 1. r1.0.0.7.sql 2.DB_SC_ACCESS由C那边提供;</h3><h3 id="配置文件变更：有"><a href="#配置文件变更：有" class="headerlink" title="配置文件变更：有"></a>配置文件变更：有</h3><ol>
-<li>config.properties:新增通用gis地址配置</li>
-<li>db.properties:新增access数据库配置<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3></li>
-</ol>
-<h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><h2 id="翁迪全：-2018-09-20-r1-0-0-6"><a href="#翁迪全：-2018-09-20-r1-0-0-6" class="headerlink" title="翁迪全： 2018/09/20:r1.0.0.6"></a>翁迪全： 2018/09/20:r1.0.0.6</h2><h3 id="更新功能说明-1"><a href="#更新功能说明-1" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><p>1.[update] ocx对接ip广播;<br>2.[fix] 游船、电瓶车点位图标变成了小圆点;<br>3.[fix] 每次进入地图界面都会提示一次“人员查询失败”;<br>4.[fix] 最近事件展示的事件数据不对;<br>5.[fix] 应急资源汇总会重复展示数据;<br>6.[update] 处于非gis地图界面时有告警产生弹窗提示;<br>7.[fix] 新增预警页面无法插入车辆预警;<br>8.[update] 广播去除了广播号码字段，新增服务器IP地址;<br>9.[fix] 坐标下发所有点位都是同一个坐标<br>10.[fix] 无法添加队伍成员</p>
-<h3 id="数据库变更：-无"><a href="#数据库变更：-无" class="headerlink" title="数据库变更： 无"></a>数据库变更： 无</h3><h3 id="配置文件变更：有-1"><a href="#配置文件变更：有-1" class="headerlink" title="配置文件变更：有"></a>配置文件变更：有</h3><ol>
-<li>新增广播服务器地址、新增麦克风终端ID配置<h3 id="备注-1"><a href="#备注-1" class="headerlink" title="备注"></a>备注</h3>1.nginx新增scooper-data、scooper-report-web的配置<br>2.r1.0.1.6版本开始需要部署scooper-report-web、scooper-data</li>
-</ol>
-<hr>
-<h2 id="翁迪全：-2018-08-31-r1-0-0-5"><a href="#翁迪全：-2018-08-31-r1-0-0-5" class="headerlink" title="翁迪全： 2018/08/31:r1.0.0.5"></a>翁迪全： 2018/08/31:r1.0.0.5</h2><h3 id="更新功能说明-2"><a href="#更新功能说明-2" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><p>1.[update] 解除告警时，删除点位<br>2.[add] 新增页面级别的权限控制<br>3.[add] 新增研发日志页面;<br>4.[update] 点击头像显示登录用户信息;<br>5.[fix] 修复点击游船、电瓶车点位，几秒后选中状态会自动消失的问题;<br>6.[update] 预警点位名称按预警类型做区分;<br>7.[update] 图层列表名称修改;<br>8.[update] 统计页面设备编码增加编号的展示;<br>9.[update] 事件统计等级选择宽增加<code>全部</code>选项;<br>10.[fix] 修改医疗点的弹窗 名字为“修改广播”;<br>11.[fix] 添加游船的弹窗名字为“添加游艇”;<br>12.[update] 应急队伍成员页面新增返回应急队伍功能;<br>13.[update] 修改队伍的弹窗名字为“修改电瓶车”;<br>14.[fix] 添加队伍人员时操作日志获取不到队伍名称;<br>15.[fix] 更换用户后打开应急预案任然是原来的账号;</p>
-<h3 id="数据库变更：-update-r1-0-1-5-sql"><a href="#数据库变更：-update-r1-0-1-5-sql" class="headerlink" title="数据库变更： update_r1.0.1.5.sql"></a>数据库变更： update_r1.0.1.5.sql</h3><h3 id="配置文件变更：无"><a href="#配置文件变更：无" class="headerlink" title="配置文件变更：无"></a>配置文件变更：无</h3><hr>
-<h2 id="翁迪全：-2018-08-28-r1-0-0-4"><a href="#翁迪全：-2018-08-28-r1-0-0-4" class="headerlink" title="翁迪全： 2018/08/28:r1.0.0.4"></a>翁迪全： 2018/08/28:r1.0.0.4</h2><h3 id="更新功能说明-3"><a href="#更新功能说明-3" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><p>1.[fix] 打开多个视频后选择一键关闭，只会关闭第一个视频<br>2.[fix] 从其他分屏切换到一分屏后无法再切回<br>3.[fix] 打开多个摄像头，然后切到一分屏，只会关闭一个摄像头（一打开列表<br>        只少了一个摄像头），此时切换到其他分屏方式，恢复显示原来打开的<br>        摄像头，但是少了一个<br>4.[fix]经常出现所有摄像头都关闭了还会显示一个摄像头的视频的情况<br>5.[fix]轮询不生效（只能打开第一个，时间到了后关闭就不在打开其他摄像头<br>6.[update] 事件管理功能完善（流程有更改)，增加重大事件预案的关联<br>7.[update] 统计功能完善<br>8.[add] 新增告警演示页面（/zlw-web/view/demo/alarmInsert.html）<br>9.[fix] 修复日志结果都是失败的bug</p>
-<h3 id="数据库变更：-无-1"><a href="#数据库变更：-无-1" class="headerlink" title="数据库变更： 无"></a>数据库变更： 无</h3><h3 id="配置文件变更：-无"><a href="#配置文件变更：-无" class="headerlink" title="配置文件变更： 无"></a>配置文件变更： 无</h3><hr>
-<h2 id="翁迪全：-2018-08-21-r1-0-0-3"><a href="#翁迪全：-2018-08-21-r1-0-0-3" class="headerlink" title="翁迪全： 2018/08/21:r1.0.0.3"></a>翁迪全： 2018/08/21:r1.0.0.3</h2><h3 id="更新功能说明-4"><a href="#更新功能说明-4" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><p>1.[update] 统计分析功能完善<br>2.[add] 日志功能<br>3.[update] 3种级别事件、游船、电瓶车图标更换<br>4.[add] 阈值配置界面<br>5.[add] 产生预警时gis界面上会有弹窗提醒，点击确定会到指定点位上<br>6.[add] gis地图新增结束预警功能<br>7.[add] 坐标下发</p>
-<h3 id="数据库变更：-update-r1-0-0-3-sql"><a href="#数据库变更：-update-r1-0-0-3-sql" class="headerlink" title="数据库变更： update_r1.0.0.3.sql"></a>数据库变更： update_r1.0.0.3.sql</h3><h3 id="配置文件变更：-1-新增DB-SCLOG和DB-SC-ALRAM数据库配置"><a href="#配置文件变更：-1-新增DB-SCLOG和DB-SC-ALRAM数据库配置" class="headerlink" title="配置文件变更： 1.新增DB_SCLOG和DB_SC_ALRAM数据库配置"></a>配置文件变更： 1.新增DB_SCLOG和DB_SC_ALRAM数据库配置</h3><hr>
-<h2 id="翁迪全：-2018-08-21-r1-0-0-2"><a href="#翁迪全：-2018-08-21-r1-0-0-2" class="headerlink" title="翁迪全： 2018/08/21:r1.0.0.2"></a>翁迪全： 2018/08/21:r1.0.0.2</h2><h3 id="更新功能说明-5"><a href="#更新功能说明-5" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><p>1.[add] GIS地图点位详情二次开发<br>2.[add] gis点位配置<br>3.[add] 应急队伍配置、队伍人员添加<br>4.[add] 告警模块</p>
-<h3 id="数据库变更：-新增DB-SC-ALRAM"><a href="#数据库变更：-新增DB-SC-ALRAM" class="headerlink" title="数据库变更： 新增DB_SC_ALRAM"></a>数据库变更： 新增DB_SC_ALRAM</h3><h3 id="配置文件变更：-无-1"><a href="#配置文件变更：-无-1" class="headerlink" title="配置文件变更： 无"></a>配置文件变更： 无</h3><hr>
-<h2 id="翁迪全：-2018-08-02-r1-0-0-1"><a href="#翁迪全：-2018-08-02-r1-0-0-1" class="headerlink" title="翁迪全： 2018/08/02:r1.0.0.1"></a>翁迪全： 2018/08/02:r1.0.0.1</h2><h3 id="更新功能说明-6"><a href="#更新功能说明-6" class="headerlink" title="更新功能说明"></a>更新功能说明</h3><ol>
-<li>项目创建<h3 id="数据库变更：-无-2"><a href="#数据库变更：-无-2" class="headerlink" title="数据库变更： 无"></a>数据库变更： 无</h3></li>
-</ol>
-
-          
+          版本更新记录
+翁迪全： 2018/08/31:r1.0.0.7更新功能说明1.[update] 对接车流、人流;2.[update] 阈值设置设备编号可以设置多个（以逗号分割）3.[update] 去除了生成预警的demo页面;4.[fix] 物资统计接口更换;5.[fix] 解决第二次登录无法展示
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/23/测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -441,17 +427,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/23/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
