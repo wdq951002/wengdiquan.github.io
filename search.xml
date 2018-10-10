@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[sonar的介绍、安装]]></title>
+    <url>%2F2018%2F09%2F28%2Fsonar%E7%9A%84%E4%BB%8B%E7%BB%8D%E3%80%81%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[sonar的使用 SonarQube 是一个用于代码质量管理的开源平台，用于管理源代码的质量。 通过插件形式，可以支持包括 java, C#, C/C++, PL/SQL, Cobol, JavaScrip, Groovy 等等二十几种编程语言的代码质量管理与检测。 为什么要使用sonar？提高代码质量，了解自己在编码过程中犯过的错误，让代码更具可读性和维护性。 安装过程准备环境 jdk mysql sonarqube: https://www.sonarqube.org/downloads/ 安装SonarQube这里选择的是7.3版本 将下载好的sonarQube放到想要安装的目录下,然后解压; 新建一个任意名字的数据库; 修改安装目录下的conf/sonar.properties文件 添加如下配置： 123456sonar.jdbc.url=jdbc:mysql://192.168.101.54:3306/DB_SONAR?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformancesonar.jdbc.username=showclearsonar.jdbc.password=showclearsonar.sorceEncoding=UTF-8sonar.login=adminsonar.password=admin 启动sonar： ./bin/linux-x86-64/sonar.sh start 登录（admin = admin); Administration-Marketplace搜索Chinese Pack，安装中文补丁包; 重启sonar; 修改maven的配置文件settings.xml，添加如下：12345678910&lt;profile&gt; &lt;id&gt;sonar&lt;/id&gt; &lt;properties&gt; &lt;sonar.jdbc.url&gt;jdbc:mysql://192.168.101.54:3306/sonar&lt;/sonar.jdbc.url&gt; &lt;sonar.jdbc.driver&gt;com.mysql.jdbc.Driver&lt;/sonar.jdbc.driver&gt; &lt;sonar.jdbc.username&gt;root&lt;/sonar.jdbc.username&gt; &lt;sonar.jdbc.password&gt;root&lt;/sonar.jdbc.password&gt; &lt;sonar.host.url&gt;http://192.168.101.54:9000&lt;/sonar.host.url&gt; &lt;!-- Sonar服务器访问地址 --&gt; &lt;/properties&gt;&lt;/profile&gt; 扫描maven项目 cd到需要扫描分析的maven项目根下; mvn sonar:sonar; 打开sonar页面选择项目就可以看到效果了;ps:idea和eclipse扫描项目不需要mvn直接sonar:sonar就可以了 idea安装sonar插件打开插件市场搜索sonar]]></content>
+      <categories>
+        <category>代码规范</category>
+      </categories>
+      <tags>
+        <tag>sonar</tag>
+        <tag>代码规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[枣林湾项目CHANGELOG]]></title>
+    <url>%2F2018%2F09%2F23%2F%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[版本更新记录 翁迪全： 2018/08/31:r1.0.0.7更新功能说明1.[update] 对接车流、人流;2.[update] 阈值设置设备编号可以设置多个（以逗号分割）3.[update] 去除了生成预警的demo页面;4.[fix] 物资统计接口更换;5.[fix] 解决第二次登录无法展示登录人信息的bug;6.[update] scooper-report去除scooper-data的依赖（不再需要部署scooper-data） 数据库变更： 1. r1.0.0.7.sql 2.DB_SC_ACCESS由C那边提供;配置文件变更：有 config.properties:新增通用gis地址配置 db.properties:新增access数据库配置备注 1.翁迪全： 2018/09/20:r1.0.0.6更新功能说明1.[update] ocx对接ip广播;2.[fix] 游船、电瓶车点位图标变成了小圆点;3.[fix] 每次进入地图界面都会提示一次“人员查询失败”;4.[fix] 最近事件展示的事件数据不对;5.[fix] 应急资源汇总会重复展示数据;6.[update] 处于非gis地图界面时有告警产生弹窗提示;7.[fix] 新增预警页面无法插入车辆预警;8.[update] 广播去除了广播号码字段，新增服务器IP地址;9.[fix] 坐标下发所有点位都是同一个坐标10.[fix] 无法添加队伍成员 数据库变更： 无配置文件变更：有 新增广播服务器地址、新增麦克风终端ID配置备注1.nginx新增scooper-data、scooper-report-web的配置2.r1.0.1.6版本开始需要部署scooper-report-web、scooper-data 翁迪全： 2018/08/31:r1.0.0.5更新功能说明1.[update] 解除告警时，删除点位2.[add] 新增页面级别的权限控制3.[add] 新增研发日志页面;4.[update] 点击头像显示登录用户信息;5.[fix] 修复点击游船、电瓶车点位，几秒后选中状态会自动消失的问题;6.[update] 预警点位名称按预警类型做区分;7.[update] 图层列表名称修改;8.[update] 统计页面设备编码增加编号的展示;9.[update] 事件统计等级选择宽增加全部选项;10.[fix] 修改医疗点的弹窗 名字为“修改广播”;11.[fix] 添加游船的弹窗名字为“添加游艇”;12.[update] 应急队伍成员页面新增返回应急队伍功能;13.[update] 修改队伍的弹窗名字为“修改电瓶车”;14.[fix] 添加队伍人员时操作日志获取不到队伍名称;15.[fix] 更换用户后打开应急预案任然是原来的账号; 数据库变更： update_r1.0.1.5.sql配置文件变更：无 翁迪全： 2018/08/28:r1.0.0.4更新功能说明1.[fix] 打开多个视频后选择一键关闭，只会关闭第一个视频2.[fix] 从其他分屏切换到一分屏后无法再切回3.[fix] 打开多个摄像头，然后切到一分屏，只会关闭一个摄像头（一打开列表 只少了一个摄像头），此时切换到其他分屏方式，恢复显示原来打开的 摄像头，但是少了一个4.[fix]经常出现所有摄像头都关闭了还会显示一个摄像头的视频的情况5.[fix]轮询不生效（只能打开第一个，时间到了后关闭就不在打开其他摄像头6.[update] 事件管理功能完善（流程有更改)，增加重大事件预案的关联7.[update] 统计功能完善8.[add] 新增告警演示页面（/zlw-web/view/demo/alarmInsert.html）9.[fix] 修复日志结果都是失败的bug 数据库变更： 无配置文件变更： 无 翁迪全： 2018/08/21:r1.0.0.3更新功能说明1.[update] 统计分析功能完善2.[add] 日志功能3.[update] 3种级别事件、游船、电瓶车图标更换4.[add] 阈值配置界面5.[add] 产生预警时gis界面上会有弹窗提醒，点击确定会到指定点位上6.[add] gis地图新增结束预警功能7.[add] 坐标下发 数据库变更： update_r1.0.0.3.sql配置文件变更： 1.新增DB_SCLOG和DB_SC_ALRAM数据库配置 翁迪全： 2018/08/21:r1.0.0.2更新功能说明1.[add] GIS地图点位详情二次开发2.[add] gis点位配置3.[add] 应急队伍配置、队伍人员添加4.[add] 告警模块 数据库变更： 新增DB_SC_ALRAM配置文件变更： 无 翁迪全： 2018/08/02:r1.0.0.1更新功能说明 项目创建数据库变更： 无]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F09%2F23%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
