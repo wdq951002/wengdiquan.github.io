@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://p9zf5vxai.bkt.clouddn.com/proxifierCheck.png">
 <meta property="og:image" content="http://p9zf5vxai.bkt.clouddn.com/tvVpn%E8%BF%9E%E6%8E%A5.png">
 <meta property="og:image" content="http://p9zf5vxai.bkt.clouddn.com/tvVpn%E8%BF%9E%E6%8E%A5%E6%88%90%E5%8A%9F.png">
-<meta property="og:updated_time" content="2018-10-17T08:01:33.739Z">
+<meta property="og:updated_time" content="2018-10-17T08:08:58.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自建VPN，连接公司内网">
 <meta name="twitter:description" content="自建VPN，连接公司内网应用场景 在家远程办公; 项目现场bug定位; 家里写代码下载不了公司私仓的jar包;准备工作 teamViewer或蒲公英VPN; CCProxy; Proxifier;  用蒲公英SVN部署安装SVN工具 安装蒲公英SVN，并在内网机器和需要打通内网的机器上用同一个账号登录; 如上图，蒲公英SVN给公司电脑分配了一个虚拟IP：172.9.185.149，外网电脑：172">
@@ -398,19 +398,19 @@
 <li>安装蒲公英SVN，并在内网机器和需要打通内网的机器上用同一个账号登录;<br><img src="http://p9zf5vxai.bkt.clouddn.com/%E8%92%B2%E5%85%AC%E8%8B%B1%E7%99%BB%E5%BD%95.png" alt=""></li>
 <li>如上图，蒲公英SVN给公司电脑分配了一个虚拟IP：172.9.185.149，外网电脑：172.11.124.28;</li>
 <li>测试ping 172.11.124.28,ping成功则表示蒲公英SVN接通了这两台电脑的网络;</li>
-<li>在内网电脑上安装CCProxy,安装完成后直接打开就可以了。<br><img src="http://p9zf5vxai.bkt.clouddn.com/CCProxy%E6%88%AA%E5%9B%BE.png" alt=""><br>需要注意的是，如果你用了其他代理，肯能会出现端口冲突的问题（SOCK默认都是1080），所以我这里把端口改成了1088<br><img src="http://p9zf5vxai.bkt.clouddn.com/CCProxy%E8%AE%BE%E7%BD%AE.png" alt=""></li>
+<li>在内网电脑上安装CCProxy,安装完成后直接打开就可以了。<br><img src="http://p9zf5vxai.bkt.clouddn.com/CCProxy%E6%88%AA%E5%9B%BE.png" alt=""><br>需要注意的是，如果你用了其他代理，可能会出现端口冲突的问题（SOCKS默认都是1080），所以我这里为了防止和SSR冲突把端口改成了1088<br><img src="http://p9zf5vxai.bkt.clouddn.com/CCProxy%E8%AE%BE%E7%BD%AE.png" alt=""></li>
 <li>在家里电脑安装Proxifier或者其他代理软件;</li>
-<li>新建一个代理服务器<br><img src="http://p9zf5vxai.bkt.clouddn.com/proxifier%E6%88%AA%E5%9B%BE.png" alt=""><br>端口号默认为1080，我这里改为1088防止和ssr冲突;</li>
+<li>新建一个代理服务器<br><img src="http://p9zf5vxai.bkt.clouddn.com/proxifier%E6%88%AA%E5%9B%BE.png" alt=""><br>IP为公司电脑的虚拟外网IP，端口号默认为1080，我这里改为1088。</li>
 <li>点击check，检查通过则表示能够连接成功;<br><img src="http://p9zf5vxai.bkt.clouddn.com/proxifierCheck.png" alt=""></li>
-<li>选择OK，接下来就可以访问公司内网了。</li>
+<li>选择OK，接下来只要保证公司电脑不关机就可以在家里访问公司内网了。</li>
 </ol>
-<h3 id="设置路由规则"><a href="#设置路由规则" class="headerlink" title="设置路由规则"></a>设置路由规则</h3><p>如果不需要全局代理，可以选择profile-Proxification Rules自己再额外添加路由规则或者指定某些程序走代理;</p>
 <h2 id="用TeamViewer部署"><a href="#用TeamViewer部署" class="headerlink" title="用TeamViewer部署"></a>用TeamViewer部署</h2><ol>
 <li>安装teamviewer;</li>
 <li>连接时选择VPN<br><img src="http://p9zf5vxai.bkt.clouddn.com/tvVpn%E8%BF%9E%E6%8E%A5.png" alt=""></li>
 <li>连接成功后可以看到tv给本机和被连接的电脑分配了2个虚拟IP<br><img src="http://p9zf5vxai.bkt.clouddn.com/tvVpn%E8%BF%9E%E6%8E%A5%E6%88%90%E5%8A%9F.png" alt=""></li>
 <li>接下来的步骤就和上面一样了</li>
 </ol>
+<h2 id="设置路由规则"><a href="#设置路由规则" class="headerlink" title="设置路由规则"></a>设置路由规则</h2><p>如果不需要全局代理，可以选择profile-Proxification Rules自己再额外添加路由规则或者指定某些程序走代理;</p>
 <h2 id="2个VPN工具比较"><a href="#2个VPN工具比较" class="headerlink" title="2个VPN工具比较"></a>2个VPN工具比较</h2><ol>
 <li>teamViewer在平时工作中用到的更多，可以不用再下载新的客户端;</li>
 <li>蒲公英支持多台机器组网，teamviewer只能1对1。</li>
@@ -593,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自建VPN，连接公司内网"><span class="nav-number">1.</span> <span class="nav-text">自建VPN，连接公司内网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用蒲公英SVN部署"><span class="nav-number">1.3.</span> <span class="nav-text">用蒲公英SVN部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装SVN工具"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装SVN工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置路由规则"><span class="nav-number">1.3.2.</span> <span class="nav-text">设置路由规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用TeamViewer部署"><span class="nav-number">1.4.</span> <span class="nav-text">用TeamViewer部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2个VPN工具比较"><span class="nav-number">1.5.</span> <span class="nav-text">2个VPN工具比较</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#自建VPN，连接公司内网"><span class="nav-number">1.</span> <span class="nav-text">自建VPN，连接公司内网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">1.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用蒲公英SVN部署"><span class="nav-number">1.3.</span> <span class="nav-text">用蒲公英SVN部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装SVN工具"><span class="nav-number">1.3.1.</span> <span class="nav-text">安装SVN工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用TeamViewer部署"><span class="nav-number">1.4.</span> <span class="nav-text">用TeamViewer部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置路由规则"><span class="nav-number">1.5.</span> <span class="nav-text">设置路由规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2个VPN工具比较"><span class="nav-number">1.6.</span> <span class="nav-text">2个VPN工具比较</span></a></li></ol></li></ol></div>
             
 
           </div>
