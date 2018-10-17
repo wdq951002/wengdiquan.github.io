@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[自建VPN，连接公司内网]]></title>
+    <url>%2F2018%2F10%2F17%2F%E8%87%AA%E5%BB%BAVPN%2F</url>
+    <content type="text"><![CDATA[自建VPN，连接公司内网应用场景 在家远程办公; 项目现场bug定位; 家里写代码下载不了公司私仓的jar包;准备工作 teamViewer或蒲公英VPN; CCProxy; Proxifier; 用蒲公英SVN部署安装SVN工具 安装蒲公英SVN，并在内网机器和需要打通内网的机器上用同一个账号登录; 如上图，蒲公英SVN给公司电脑分配了一个虚拟IP：172.9.185.149，外网电脑：172.11.124.28; 测试ping 172.11.124.28,ping成功则表示蒲公英SVN接通了这两台电脑的网络; 在内网电脑上安装CCProxy,安装完成后直接打开就可以了。需要注意的是，如果你用了其他代理，肯能会出现端口冲突的问题（SOCK默认都是1080），所以我这里把端口改成了1088 在家里电脑安装Proxifier或者其他代理软件; 新建一个代理服务器端口号默认为1080，我这里改为1088防止和ssr冲突; 点击check，检查通过则表示能够连接成功; 选择OK，接下来就可以访问公司内网了。 设置路由规则如果不需要全局代理，可以选择profile-Proxification Rules自己再额外添加路由规则或者指定某些程序走代理; 用TeamViewer部署 安装teamviewer; 连接时选择VPN 连接成功后可以看到tv给本机和被连接的电脑分配了2个虚拟IP 接下来的步骤就和上面一样了 2个VPN工具比较 teamViewer在平时工作中用到的更多，可以不用再下载新的客户端; 蒲公英支持多台机器组网，teamviewer只能1对1。 teamViewer经常被判断为商用行为;所以更推荐蒲公英]]></content>
+      <categories>
+        <category>日常倒腾</category>
+      </categories>
+      <tags>
+        <tag>VPN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[sonar的介绍、安装]]></title>
     <url>%2F2018%2F09%2F28%2Fsonar%E7%9A%84%E4%BB%8B%E7%BB%8D%E3%80%81%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[sonar的使用 SonarQube 是一个用于代码质量管理的开源平台，用于管理源代码的质量。 通过插件形式，可以支持包括 java, C#, C/C++, PL/SQL, Cobol, JavaScrip, Groovy 等等二十几种编程语言的代码质量管理与检测。 为什么要使用sonar？提高代码质量，了解自己在编码过程中犯过的错误，让代码更具可读性和维护性。 安装过程准备环境 jdk mysql sonarqube: https://www.sonarqube.org/downloads/ 安装SonarQube这里选择的是7.3版本 将下载好的sonarQube放到想要安装的目录下,然后解压; 新建一个任意名字的数据库; 修改安装目录下的conf/sonar.properties文件 添加如下配置： 123456sonar.jdbc.url=jdbc:mysql://192.168.101.54:3306/DB_SONAR?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformancesonar.jdbc.username=showclearsonar.jdbc.password=showclearsonar.sorceEncoding=UTF-8sonar.login=adminsonar.password=admin 启动sonar： ./bin/linux-x86-64/sonar.sh start 登录（admin = admin); Administration-Marketplace搜索Chinese Pack，安装中文补丁包; 重启sonar; 修改maven的配置文件settings.xml，添加如下：12345678910&lt;profile&gt; &lt;id&gt;sonar&lt;/id&gt; &lt;properties&gt; &lt;sonar.jdbc.url&gt;jdbc:mysql://192.168.101.54:3306/sonar&lt;/sonar.jdbc.url&gt; &lt;sonar.jdbc.driver&gt;com.mysql.jdbc.Driver&lt;/sonar.jdbc.driver&gt; &lt;sonar.jdbc.username&gt;root&lt;/sonar.jdbc.username&gt; &lt;sonar.jdbc.password&gt;root&lt;/sonar.jdbc.password&gt; &lt;sonar.host.url&gt;http://192.168.101.54:9000&lt;/sonar.host.url&gt; &lt;!-- Sonar服务器访问地址 --&gt; &lt;/properties&gt;&lt;/profile&gt; 扫描maven项目 cd到需要扫描分析的maven项目根下; mvn sonar:sonar; 打开sonar页面选择项目就可以看到效果了;ps:idea和eclipse扫描项目不需要mvn直接sonar:sonar就可以了 idea安装sonar插件打开插件市场搜索sonar]]></content>
